@@ -28,7 +28,7 @@ public class CakeView extends SurfaceView {
     public static final float layerHeight = 200.0f;
     public static final float frostHeight = 50.0f;
     public static final float candleHeight = 300.0f;
-    public static final float candleWidth = 40.0f;
+    public static final float candleWidth = 70.0f;
     public static final float wickHeight = 30.0f;
     public static final float wickWidth = 6.0f;
     public static final float outerFlameRadius = 30.0f;
@@ -123,32 +123,48 @@ public class CakeView extends SurfaceView {
         //Then a second cake layer
         canvas.drawRect(cakeLeft, top, cakeLeft + cakeWidth, bottom, cakePaint);
         if (cakeModel.candles) { //Now a candle in the center
-            if(cakeModel.numCandles == 0){
-
-            }else if(cakeModel.numCandles == 1){
-                drawCandle(canvas, cakeLeft + cakeWidth/2 , cakeTop);
-
-            }else if(cakeModel.numCandles == 2){
-                drawCandle(canvas, cakeLeft + cakeWidth/2 + 4*candleWidth, cakeTop);
-                drawCandle(canvas, cakeLeft + cakeWidth/2 - 4*candleWidth, cakeTop);
-
-            }else if(cakeModel.numCandles == 3){
-                drawCandle(canvas, cakeLeft + cakeWidth/2 + 4*candleWidth, cakeTop);
-                drawCandle(canvas, cakeLeft + cakeWidth/2 - 4*candleWidth, cakeTop);
-                drawCandle(canvas, cakeLeft + cakeWidth/2, cakeTop);
-
-            }else if(cakeModel.numCandles == 4){
-                drawCandle(canvas, cakeLeft + cakeWidth/2 + 2*candleWidth, cakeTop);
-                drawCandle(canvas, cakeLeft + cakeWidth/2 - 2*candleWidth, cakeTop);
-                drawCandle(canvas, cakeLeft + cakeWidth/2 + 6*candleWidth, cakeTop);
-                drawCandle(canvas, cakeLeft + cakeWidth/2 - 6*candleWidth, cakeTop);
-
-            }else if(cakeModel.numCandles == 5){
-                drawCandle(canvas, cakeLeft + cakeWidth/2 + 4*candleWidth, cakeTop);
-                drawCandle(canvas, cakeLeft + cakeWidth/2 - 4*candleWidth, cakeTop);
-                drawCandle(canvas, cakeLeft + cakeWidth/2 + 8*candleWidth, cakeTop);
-                drawCandle(canvas, cakeLeft + cakeWidth/2 - 8*candleWidth, cakeTop);
-                drawCandle(canvas, cakeLeft + cakeWidth/2 , cakeTop);
+//            if(cakeModel.numCandles == 0){
+//
+//            }else if(cakeModel.numCandles == 1){
+//                drawCandle(canvas, cakeLeft + cakeWidth/2 , cakeTop);
+//
+//            }else if(cakeModel.numCandles == 2){
+//                drawCandle(canvas, cakeLeft + cakeWidth/2 + 4*candleWidth, cakeTop);
+//                drawCandle(canvas, cakeLeft + cakeWidth/2 - 4*candleWidth, cakeTop);
+//
+//            }else if(cakeModel.numCandles == 3){
+//                drawCandle(canvas, cakeLeft + cakeWidth/2 + 4*candleWidth, cakeTop);
+//                drawCandle(canvas, cakeLeft + cakeWidth/2 - 4*candleWidth, cakeTop);
+//                drawCandle(canvas, cakeLeft + cakeWidth/2, cakeTop);
+//
+//            }else if(cakeModel.numCandles == 4){
+//                drawCandle(canvas, cakeLeft + cakeWidth/2 + 2*candleWidth, cakeTop);
+//                drawCandle(canvas, cakeLeft + cakeWidth/2 - 2*candleWidth, cakeTop);
+//                drawCandle(canvas, cakeLeft + cakeWidth/2 + 6*candleWidth, cakeTop);
+//                drawCandle(canvas, cakeLeft + cakeWidth/2 - 6*candleWidth, cakeTop);
+//
+//            }else if(cakeModel.numCandles == 5){
+//                drawCandle(canvas, cakeLeft + cakeWidth/2 + 4*candleWidth, cakeTop);
+//                drawCandle(canvas, cakeLeft + cakeWidth/2 - 4*candleWidth, cakeTop);
+//                drawCandle(canvas, cakeLeft + cakeWidth/2 + 8*candleWidth, cakeTop);
+//                drawCandle(canvas, cakeLeft + cakeWidth/2 - 8*candleWidth, cakeTop);
+//                drawCandle(canvas, cakeLeft + cakeWidth/2 , cakeTop);
+//            }
+            //Now a candle in the center
+            if (cakeModel.numCandles == 1 || cakeModel.numCandles == 3 || cakeModel.numCandles == 5) {
+                drawCandle(canvas, (cakeWidth + cakeLeft )/ 2 , cakeTop);
+            }
+            if (cakeModel.numCandles == 2 || cakeModel.numCandles == 4 || cakeModel.numCandles == 3) {
+                drawCandle(canvas, (cakeWidth + cakeWidth) / 3, cakeTop);
+                drawCandle(canvas, cakeLeft * 2 + cakeWidth / 4 - candleWidth / 4, cakeTop);
+            }
+            if (cakeModel.numCandles == 4 || cakeModel.numCandles == 5) {
+                drawCandle(canvas, (cakeWidth + cakeLeft) / 5, cakeTop);
+                drawCandle(canvas, (2 * cakeWidth) / 2 - cakeLeft, cakeTop);
+            }
+            if (cakeModel.numCandles == 5) {
+                drawCandle(canvas, (cakeWidth + cakeWidth) / 3 + cakeLeft, cakeTop);
+                drawCandle(canvas, cakeLeft * 2 + cakeWidth / 4 - candleWidth - cakeLeft/ 4, cakeTop);
             }
            }
 
