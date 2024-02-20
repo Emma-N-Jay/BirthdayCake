@@ -5,7 +5,9 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.util.AttributeSet;
+import android.view.MotionEvent;
 import android.view.SurfaceView;
+import android.view.View;
 
 public class CakeView extends SurfaceView {
 
@@ -168,6 +170,9 @@ public class CakeView extends SurfaceView {
             }
            }
 
+
+        //draw the boxes
+        canvas.drawRect(cakeModel.boxX, cakeModel.boxY, cakeModel.boxX + 50, cakeModel.boxY + 50, this.cakePaint);
     }//onDraw
 
     //  Allows other objects to retrieve a reference to the CakeModel object.
