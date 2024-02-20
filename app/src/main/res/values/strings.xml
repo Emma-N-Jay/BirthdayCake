@@ -1,4 +1,10 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">BirthdayCake</string>
     <string name="birthday">Happy Birthday!</string>
+    <string name="frosting">Frosting?</string>
+    <string name="candles">Candles?</string>
+    <string name="numcandles">How many candles?</string>
+    <string name="blow" tools:ignore="ExtraTranslation">Blow Out</string>
+
+
 </resources>
