@@ -6,6 +6,9 @@ public class CakeModel {
     int numCandles = 2;
     boolean frosting = true;
     boolean candles = true;
+
+    float textx;
+    float texty;
 //
 //
 //
