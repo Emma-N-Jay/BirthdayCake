@@ -13,6 +13,7 @@ public class EventHandler implements View.OnClickListener, View.OnTouchListener 
     private MainActivity myActivity;
 
     //constructor requires aMainActivity to find by ID
+    //find view by ur mom
     public EventHandler(MainActivity initActivity) {
         myActivity = initActivity;
     }

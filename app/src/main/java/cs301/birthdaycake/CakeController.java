@@ -15,7 +15,7 @@ import android.widget.SeekBar;
 public class CakeController implements View.OnClickListener, CompoundButton.OnCheckedChangeListener,
         SeekBar.OnSeekBarChangeListener, View.OnTouchListener {
 
-    //lalalalalalalalalalalalalalalalalalalala
+    //lalalalalalalalalalalalalalalalalalalalalalalala
 
     private CakeView mainCakeView;
 
