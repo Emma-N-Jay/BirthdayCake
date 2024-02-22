@@ -18,6 +18,8 @@ public class CakeView extends SurfaceView {
     Paint outerFlamePaint = new Paint();
     Paint innerFlamePaint = new Paint();
     Paint wickPaint = new Paint();
+    Paint boxRed = new Paint();
+    Paint boxGreen = new Paint();
 
     /* These constants define the dimensions of the cake.  While defining constants for things
         like this is good practice, we could be calculating these better by detecting
@@ -61,6 +63,11 @@ public class CakeView extends SurfaceView {
         outerFlamePaint.setColor(0xFFFFD700);  //gold yellow
         outerFlamePaint.setStyle(Paint.Style.FILL);
         innerFlamePaint.setColor(0xFFFFA500);  //orange
+        boxRed.setColor(0xFFFF6961);
+        boxGreen.setColor(0xFF77DD77);
+        boxRed.setStyle(Paint.Style.FILL);
+        boxGreen.setStyle(Paint.Style.FILL);
+
         innerFlamePaint.setStyle(Paint.Style.FILL);
         wickPaint.setColor(Color.BLACK);
         wickPaint.setStyle(Paint.Style.FILL);
@@ -152,6 +159,7 @@ public class CakeView extends SurfaceView {
 //                drawCandle(canvas, cakeLeft + cakeWidth/2 - 8*candleWidth, cakeTop);
 //                drawCandle(canvas, cakeLeft + cakeWidth/2 , cakeTop);
 //            }
+
             //Now a candle in the center
             if (cakeModel.numCandles == 1 || cakeModel.numCandles == 3 || cakeModel.numCandles == 5) {
                 drawCandle(canvas, (cakeWidth + cakeLeft )/ 2 , cakeTop);
@@ -172,7 +180,11 @@ public class CakeView extends SurfaceView {
 
 
         //draw the boxes
-        canvas.drawRect(cakeModel.boxX, cakeModel.boxY, cakeModel.boxX + 50, cakeModel.boxY + 50, this.cakePaint);
+        canvas.drawRect(cakeModel.boxX, cakeModel.boxY, cakeModel.boxX + 150, cakeModel.boxY + 100, this.boxRed);
+        canvas.drawRect(cakeModel.boxX, cakeModel.boxY, cakeModel.boxX+75 , cakeModel.boxY+50, this.boxGreen);
+        canvas.drawRect(cakeModel.boxX+75, cakeModel.boxY+50, cakeModel.boxX+150 , cakeModel.boxY+100, this.boxGreen);
+
+
     }//onDraw
 
     //  Allows other objects to retrieve a reference to the CakeModel object.

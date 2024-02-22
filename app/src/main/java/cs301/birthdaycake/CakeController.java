@@ -27,7 +27,6 @@ public class CakeController implements View.OnClickListener, CompoundButton.OnCh
         mainCakeModel = mainCakeView.getModel();
 
 
-
     }
 
     @Override
