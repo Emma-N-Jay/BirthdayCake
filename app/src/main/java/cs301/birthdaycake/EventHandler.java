@@ -8,7 +8,7 @@ import android.widget.TextView;
 import androidx.appcompat.app.WindowDecorActionBar;
 //, SeekBar.OnSeekBarChangeListener
 public class EventHandler implements View.OnClickListener {
-
+//awesome comment
     private MainActivity myActivity;
 
     //constructor requires aMainActivity to find by ID
