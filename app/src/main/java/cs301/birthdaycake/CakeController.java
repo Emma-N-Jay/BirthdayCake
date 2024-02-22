@@ -5,8 +5,6 @@ package cs301.birthdaycake;
 //b.	call the setOnClickListener() method on the button to register your CakeController object as a listener for clicks on this button
 
 
-import android.graphics.Canvas;
-import android.graphics.Paint;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
@@ -14,19 +12,20 @@ import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.SeekBar;
 
-public class CakeController implements View.OnClickListener, CompoundButton.OnCheckedChangeListener, SeekBar.OnSeekBarChangeListener, View.OnTouchListener{
+public class CakeController implements View.OnClickListener, CompoundButton.OnCheckedChangeListener,
+        SeekBar.OnSeekBarChangeListener, View.OnTouchListener {
+
 
 
     private CakeView mainCakeView;
 
     private CakeModel mainCakeModel;
-    float x;
-    float y;
 
     //so we can use the main cakeview and not make a new object off it.
-    public CakeController(CakeView initCakeView) {
+    public CakeController(CakeView initCakeView){
         mainCakeView = initCakeView;
         mainCakeModel = mainCakeView.getModel();
+
 
 
     }
@@ -37,21 +36,21 @@ public class CakeController implements View.OnClickListener, CompoundButton.OnCh
         mainCakeView.invalidate();
         mainCakeModel.lit = false;
 
-    }
+        }
 
     @Override
     public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-        mainCakeModel.candles = isChecked;
+        mainCakeModel.candles=isChecked;
         mainCakeView.invalidate();
     }
 
     @Override
     public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-        mainCakeModel.numCandles = progress;
+        mainCakeModel.numCandles=progress;
         mainCakeView.invalidate();
     }
 //updateCandles
-    //.getProgress()
+        //.getProgress()
 
 
     @Override
@@ -63,19 +62,19 @@ public class CakeController implements View.OnClickListener, CompoundButton.OnCh
     public void onStopTrackingTouch(SeekBar seekBar) {
 
     }
+    @Override
+    public boolean onTouch(View v, MotionEvent event) {
+        float x = event.getX();
+        float y = event.getY();
 
+        mainCakeModel.boxX = x;
+        mainCakeModel.boxY = y;
 
-    public boolean onTouch(View view, MotionEvent motionEvent) {
-        x = motionEvent.getX();
-        y = motionEvent.getY();
-        mainCakeModel.texty = y;
-        mainCakeModel.textx = x;
+        mainCakeModel.drawBox = true;
         mainCakeView.invalidate();
+
         return false;
     }
-
-
-
 }
 
 

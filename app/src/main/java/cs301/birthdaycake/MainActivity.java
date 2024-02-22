@@ -48,10 +48,9 @@ public class MainActivity extends AppCompatActivity {
         // Retrieve reference to the "Blow Out" button view
         SeekBar numCandle = findViewById(R.id.numCandles);
 
-        // Set CakeController                                        r as the OnClickListener for the button
+        // Set CakeController as the OnClickListener for the button
         numCandle.setOnSeekBarChangeListener(robert);
 
-       // bob.setOnTouchListener(robert);
         bob.setOnTouchListener(robert);
 
     }
