@@ -1,5 +1,6 @@
 package cs301.birthdaycake;
 
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.SeekBar;
@@ -7,7 +8,7 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.WindowDecorActionBar;
 //, SeekBar.OnSeekBarChangeListener
-public class EventHandler implements View.OnClickListener {
+public class EventHandler implements View.OnClickListener, View.OnTouchListener {
 
     private MainActivity myActivity;
 
@@ -28,5 +29,10 @@ public class EventHandler implements View.OnClickListener {
 
 
 
+    }
+
+    @Override
+    public boolean onTouch(View v, MotionEvent event) {
+        return false;
     }
 }
