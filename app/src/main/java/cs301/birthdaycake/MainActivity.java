@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-
+//awesome comment
         // Retrieve reference to the "candles" switch view
         Switch candle = findViewById(R.id.candles);
 

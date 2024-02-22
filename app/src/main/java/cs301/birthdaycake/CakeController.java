@@ -12,9 +12,10 @@ import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.SeekBar;
 
-public class CakeController implements View.OnClickListener, CompoundButton.OnCheckedChangeListener, SeekBar.OnSeekBarChangeListener, View.OnTouchListener {
+public class CakeController implements View.OnClickListener, CompoundButton.OnCheckedChangeListener,
+        SeekBar.OnSeekBarChangeListener, View.OnTouchListener {
 
-    //lalalalalalalalalala
+    //lalalalalalalalalalalalalalalalalalalala
 
     private CakeView mainCakeView;
 
@@ -61,8 +62,7 @@ public class CakeController implements View.OnClickListener, CompoundButton.OnCh
     public void onStopTrackingTouch(SeekBar seekBar) {
 
     }
-
-    //@Override
+    @Override
     public boolean onTouch(View v, MotionEvent event) {
         float x = event.getX();
         float y = event.getY();
@@ -71,6 +71,11 @@ public class CakeController implements View.OnClickListener, CompoundButton.OnCh
         mainCakeModel.balloonY = y;
 
         mainCakeModel.drawBalloon = true;
+
+        mainCakeModel.boxX = x;
+        mainCakeModel.boxY = y;
+
+        mainCakeModel.drawBox = true;
         mainCakeView.invalidate();
 
         return false;

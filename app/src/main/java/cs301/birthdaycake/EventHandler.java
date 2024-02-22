@@ -8,7 +8,6 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.WindowDecorActionBar;
 //, SeekBar.OnSeekBarChangeListener
-//test
 public class EventHandler implements View.OnClickListener, View.OnTouchListener {
 
     private MainActivity myActivity;
@@ -26,12 +25,9 @@ public class EventHandler implements View.OnClickListener, View.OnTouchListener 
             if (buttonLabel.equalsIgnoreCase("Blow Out")) {
                 //changeName();
             }
+
         }
-
-
-
     }
-
     @Override
     public boolean onTouch(View v, MotionEvent event) {
         return false;

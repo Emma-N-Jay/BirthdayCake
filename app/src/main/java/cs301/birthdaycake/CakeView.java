@@ -5,7 +5,9 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.util.AttributeSet;
+import android.view.MotionEvent;
 import android.view.SurfaceView;
+import android.view.View;
 
 public class CakeView extends SurfaceView {
 
@@ -18,6 +20,9 @@ public class CakeView extends SurfaceView {
     Paint wickPaint = new Paint();
     Paint balloonPaint = new Paint();
     int balloonInt;
+    Paint boxRed = new Paint();
+    Paint boxGreen = new Paint();
+
 
     /* These constants define the dimensions of the cake.  While defining constants for things
         like this is good practice, we could be calculating these better by detecting
@@ -64,7 +69,10 @@ public class CakeView extends SurfaceView {
         innerFlamePaint.setStyle(Paint.Style.FILL);
         wickPaint.setColor(Color.BLACK);
         wickPaint.setStyle(Paint.Style.FILL);
-
+        boxRed.setColor(0xFFFF6961);
+        boxGreen.setColor(0xFF77DD77);
+        boxRed.setStyle(Paint.Style.FILL);
+        boxGreen.setStyle(Paint.Style.FILL);
 
         setBackgroundColor(Color.WHITE);  //better than black default
 
@@ -126,6 +134,7 @@ public class CakeView extends SurfaceView {
         //Then a second cake layer
         canvas.drawRect(cakeLeft, top, cakeLeft + cakeWidth, bottom, cakePaint);
         if (cakeModel.candles) { //Now a candle in the center
+//
             //Now a candle in the center
             if (cakeModel.numCandles == 1 || cakeModel.numCandles == 3 || cakeModel.numCandles == 5) {
                 drawCandle(canvas, (cakeWidth + cakeLeft )/ 2 , cakeTop);
@@ -147,11 +156,28 @@ public class CakeView extends SurfaceView {
                 (int) (Math.random() * 256),
                 (int) (Math.random() * 256)));
 
+        Paint location = new Paint();
+        location.setTextSize(50);
+        location.setColor(Color.RED);
+        canvas.drawText(cakeModel.boxX + " , " + cakeModel.boxY, 1500, 600, location);
+
         //draws balloon
         canvas.drawCircle(cakeModel.balloonX, cakeModel.balloonY, 50, this.balloonPaint);
         canvas.drawRect(cakeModel.balloonX - 2, cakeModel.balloonY + 50, cakeModel.balloonX + 2, cakeModel.balloonY + 150, this.wickPaint);
 
+
+
+
+
+        //draw the boxes
+        canvas.drawRect(cakeModel.boxX, cakeModel.boxY, cakeModel.boxX + 150, cakeModel.boxY + 100, this.boxRed);
+        canvas.drawRect(cakeModel.boxX, cakeModel.boxY, cakeModel.boxX+75 , cakeModel.boxY+50, this.boxGreen);
+        canvas.drawRect(cakeModel.boxX+75, cakeModel.boxY+50, cakeModel.boxX+150 , cakeModel.boxY+100, this.boxGreen);
     }//onDraw
+
+    //draw cords
+
+
 
     //  Allows other objects to retrieve a reference to the CakeModel object.
     public CakeModel getModel(){
