@@ -126,33 +126,6 @@ public class CakeView extends SurfaceView {
         //Then a second cake layer
         canvas.drawRect(cakeLeft, top, cakeLeft + cakeWidth, bottom, cakePaint);
         if (cakeModel.candles) { //Now a candle in the center
-//            if(cakeModel.numCandles == 0){
-//
-//            }else if(cakeModel.numCandles == 1){
-//                drawCandle(canvas, cakeLeft + cakeWidth/2 , cakeTop);
-//
-//            }else if(cakeModel.numCandles == 2){
-//                drawCandle(canvas, cakeLeft + cakeWidth/2 + 4*candleWidth, cakeTop);
-//                drawCandle(canvas, cakeLeft + cakeWidth/2 - 4*candleWidth, cakeTop);
-//
-//            }else if(cakeModel.numCandles == 3){
-//                drawCandle(canvas, cakeLeft + cakeWidth/2 + 4*candleWidth, cakeTop);
-//                drawCandle(canvas, cakeLeft + cakeWidth/2 - 4*candleWidth, cakeTop);
-//                drawCandle(canvas, cakeLeft + cakeWidth/2, cakeTop);
-//
-//            }else if(cakeModel.numCandles == 4){
-//                drawCandle(canvas, cakeLeft + cakeWidth/2 + 2*candleWidth, cakeTop);
-//                drawCandle(canvas, cakeLeft + cakeWidth/2 - 2*candleWidth, cakeTop);
-//                drawCandle(canvas, cakeLeft + cakeWidth/2 + 6*candleWidth, cakeTop);
-//                drawCandle(canvas, cakeLeft + cakeWidth/2 - 6*candleWidth, cakeTop);
-//
-//            }else if(cakeModel.numCandles == 5){
-//                drawCandle(canvas, cakeLeft + cakeWidth/2 + 4*candleWidth, cakeTop);
-//                drawCandle(canvas, cakeLeft + cakeWidth/2 - 4*candleWidth, cakeTop);
-//                drawCandle(canvas, cakeLeft + cakeWidth/2 + 8*candleWidth, cakeTop);
-//                drawCandle(canvas, cakeLeft + cakeWidth/2 - 8*candleWidth, cakeTop);
-//                drawCandle(canvas, cakeLeft + cakeWidth/2 , cakeTop);
-//            }
             //Now a candle in the center
             if (cakeModel.numCandles == 1 || cakeModel.numCandles == 3 || cakeModel.numCandles == 5) {
                 drawCandle(canvas, (cakeWidth + cakeLeft )/ 2 , cakeTop);

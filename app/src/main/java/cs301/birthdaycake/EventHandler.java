@@ -8,6 +8,7 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.WindowDecorActionBar;
 //, SeekBar.OnSeekBarChangeListener
+//test
 public class EventHandler implements View.OnClickListener, View.OnTouchListener {
 
     private MainActivity myActivity;

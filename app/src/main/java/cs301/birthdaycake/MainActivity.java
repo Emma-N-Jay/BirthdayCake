@@ -53,6 +53,8 @@ public class MainActivity extends AppCompatActivity {
 
         bob.setOnTouchListener(robert);
 
+        //test
+
     }
 
     public void goodbye(View button) {
