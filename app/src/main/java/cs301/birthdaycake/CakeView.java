@@ -16,9 +16,6 @@ public class CakeView extends SurfaceView {
     Paint outerFlamePaint = new Paint();
     Paint innerFlamePaint = new Paint();
     Paint wickPaint = new Paint();
-    Paint balloonPaint = new Paint();
-    int balloonInt;
-
 
     /* These constants define the dimensions of the cake.  While defining constants for things
         like this is good practice, we could be calculating these better by detecting
@@ -69,7 +66,6 @@ public class CakeView extends SurfaceView {
         setBackgroundColor(Color.WHITE);  //better than black default
 
     }
-
 
     /**
      * draws a candle at a specified position.  Important:  the left, bottom coordinates specify
@@ -127,6 +123,33 @@ public class CakeView extends SurfaceView {
         //Then a second cake layer
         canvas.drawRect(cakeLeft, top, cakeLeft + cakeWidth, bottom, cakePaint);
         if (cakeModel.candles) { //Now a candle in the center
+//            if(cakeModel.numCandles == 0){
+//
+//            }else if(cakeModel.numCandles == 1){
+//                drawCandle(canvas, cakeLeft + cakeWidth/2 , cakeTop);
+//
+//            }else if(cakeModel.numCandles == 2){
+//                drawCandle(canvas, cakeLeft + cakeWidth/2 + 4*candleWidth, cakeTop);
+//                drawCandle(canvas, cakeLeft + cakeWidth/2 - 4*candleWidth, cakeTop);
+//
+//            }else if(cakeModel.numCandles == 3){
+//                drawCandle(canvas, cakeLeft + cakeWidth/2 + 4*candleWidth, cakeTop);
+//                drawCandle(canvas, cakeLeft + cakeWidth/2 - 4*candleWidth, cakeTop);
+//                drawCandle(canvas, cakeLeft + cakeWidth/2, cakeTop);
+//
+//            }else if(cakeModel.numCandles == 4){
+//                drawCandle(canvas, cakeLeft + cakeWidth/2 + 2*candleWidth, cakeTop);
+//                drawCandle(canvas, cakeLeft + cakeWidth/2 - 2*candleWidth, cakeTop);
+//                drawCandle(canvas, cakeLeft + cakeWidth/2 + 6*candleWidth, cakeTop);
+//                drawCandle(canvas, cakeLeft + cakeWidth/2 - 6*candleWidth, cakeTop);
+//
+//            }else if(cakeModel.numCandles == 5){
+//                drawCandle(canvas, cakeLeft + cakeWidth/2 + 4*candleWidth, cakeTop);
+//                drawCandle(canvas, cakeLeft + cakeWidth/2 - 4*candleWidth, cakeTop);
+//                drawCandle(canvas, cakeLeft + cakeWidth/2 + 8*candleWidth, cakeTop);
+//                drawCandle(canvas, cakeLeft + cakeWidth/2 - 8*candleWidth, cakeTop);
+//                drawCandle(canvas, cakeLeft + cakeWidth/2 , cakeTop);
+//            }
             //Now a candle in the center
             if (cakeModel.numCandles == 1 || cakeModel.numCandles == 3 || cakeModel.numCandles == 5) {
                 drawCandle(canvas, (cakeWidth + cakeLeft )/ 2 , cakeTop);
@@ -143,16 +166,7 @@ public class CakeView extends SurfaceView {
                 drawCandle(canvas, (cakeWidth + cakeWidth) / 3 + cakeLeft, cakeTop);
                 drawCandle(canvas, cakeLeft * 2 + cakeWidth / 4 - candleWidth - cakeLeft/ 4, cakeTop);
             }
-
-            balloonPaint.setColor(Color.rgb((int) (Math.random() * 256),
-                    (int) (Math.random() * 256),
-                    (int) (Math.random() * 256)));
-
-            //draws balloon
-            canvas.drawCircle(cakeModel.balloonX, cakeModel.balloonY, 50, this.balloonPaint);
-            canvas.drawRect(cakeModel.balloonX - 2, cakeModel.balloonY + 50, cakeModel.balloonX + 2, cakeModel.balloonY + 150, this.wickPaint);
-        }
-
+           }
 
     }//onDraw
 
