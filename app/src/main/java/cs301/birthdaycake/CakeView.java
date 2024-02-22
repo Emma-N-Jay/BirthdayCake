@@ -21,6 +21,7 @@ public class CakeView extends SurfaceView {
     Paint boxRed = new Paint();
     Paint boxGreen = new Paint();
 
+
     /* These constants define the dimensions of the cake.  While defining constants for things
         like this is good practice, we could be calculating these better by detecting
         and adapting to different tablets' screen sizes and resolutions.  I've deliberately
@@ -177,6 +178,12 @@ public class CakeView extends SurfaceView {
                 drawCandle(canvas, cakeLeft * 2 + cakeWidth / 4 - candleWidth - cakeLeft/ 4, cakeTop);
             }
            }
+        Paint location = new Paint();
+        location.setTextSize(50);
+        location.setColor(Color.RED);
+        canvas.drawText(cakeModel.boxX + " , " + cakeModel.boxY, 1500, 600, location);
+
+
 
 
         //draw the boxes
@@ -186,6 +193,10 @@ public class CakeView extends SurfaceView {
 
 
     }//onDraw
+
+    //draw cords
+
+
 
     //  Allows other objects to retrieve a reference to the CakeModel object.
     public CakeModel getModel(){
