@@ -51,6 +51,7 @@ public class MainActivity extends AppCompatActivity {
         // Set CakeController as the OnClickListener for the button
         numCandle.setOnSeekBarChangeListener(robert);
 
+        bob.setOnTouchListener(robert);
     }
 
     public void goodbye(View button) {
